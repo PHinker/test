@@ -28,12 +28,12 @@ char FileStream::getFlag(){
 
 //returns input file
 std::ifstream* FileStream::getInFile(){
-	return fin;
+	return &fin;
 }
 
 //returns output file
 std::ofstream* FileStream::getOutFile(){
-	return fout;
+	return &fout;
 }
 
 // Extract files from commandline and open assumes correct
