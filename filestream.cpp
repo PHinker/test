@@ -50,10 +50,17 @@ void FileStream::openOutFile(std::string outputFileName){
 
 //outputs usage to terminal and exits 1
 void FileStream::usage(){
+	print("\nUsage: huffman -e SOURCE DEST");
+	print("\n  or:  huffman -d SOURCE DEST");
+	print("\nHuffman encode or decode SOURCE to DEST.\n");
+	print("\nRequired arguments.");
+	print("\n  -e\tEncode SOURCE to DEST");
+	print("\n  -d\tDecode SOURCE to DEST\n");
 }
 
 //outputs string to terminal
-void FileStream::print(std::string){
+void FileStream::print(std::string message){
+	std::cout << message;
 }
 
 //reads a chuck from the input file and stores in buffer
