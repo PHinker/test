@@ -56,3 +56,13 @@ int FileStream::readChunk(char*){
 int FileStream::storeChunk(char*){
 	return 0;
 }
+
+//checks file signiture
+int FileStream::validateSignature(){
+	return 0;
+}
+
+//prints message and exits 2
+void FileStream::invalidFile(){
+	exit(2);
+}

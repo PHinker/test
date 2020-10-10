@@ -1,6 +1,8 @@
 #ifndef	FILESTREAM_H
 #define FILESTREAM_H
 
+#define SIGNATURE 0xf6483e44
+
 #include <fstream>	//ifstream, ofstream
 #include <iostream>	//cout
 
@@ -34,6 +36,10 @@ public:
 	int readChunk(char*);
 	//store chunk to output file
 	int storeChunk(char*);
+	//checks file signiture. exit 2 not a huffman compressed file
+	int validateSignature();
+	//prints message and exits 2
+	void invalidFile();
 };
 
 #endif

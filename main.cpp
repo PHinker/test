@@ -4,13 +4,15 @@
 int main(int argc, char **argv){
 	FileStream fs;
 	//check command args
-	if(!fs.checkCommandArgs(argc, argv)){
-		//not valid
-		exit(1);
-	}
+	if(!fs.checkCommandArgs(argc, argv))
+		fs.usage();
 
 	//open files
 	fs.openFiles(argc, argv);
+	
+	//check signature
+	if(!fs.validateSignature())
+		fs.invalidFile();
 
 	//call either encoder or decoder
 	if(fs.getFlag() == 'e')

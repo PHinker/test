@@ -26,9 +26,6 @@ int* frequency(std::ifstream&){
 	return a;
 }
 
-//checks file signiture. exit 2
-void validateSignature(FileStream&){
-}
 
 //compresses frequency table, removes values with frequency of zero
 //returns char array with format:

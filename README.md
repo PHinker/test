@@ -53,7 +53,7 @@ huffman.h		-huffman functions
 	// Open the output file
 	void openOutFile(std::string outputFileName);
 
-	//outputs usage to terminal
+	//outputs usage to terminal. exit(1)
 	void usage();
 
 	//outputs string to terminal
@@ -64,6 +64,12 @@ huffman.h		-huffman functions
 
 	//store chunk to output file
 	int storeChunk(char*);
+
+	//checks file signiture
+	int validateSignature();
+
+	//prints message and exits 2
+	void invalidFile();
 
 ##huffman.h
 	//encodes input file and outputs to compressed file
@@ -82,9 +88,6 @@ huffman.h		-huffman functions
 	//builds a frequency table of how many times a char appears in a file
 	// returns pointer to arrary of size 256
 	int* frequency(std::ifstream&);
-
-	//checks file signiture. exit 2
-	void validateSignature(FileStream&);
 
 	//compresses frequency table, removes values with frequency of zero
 	//returns char array with format:
