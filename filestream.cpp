@@ -8,13 +8,22 @@ FileStream::~FileStream(){
 }
 
 //checks if commandline args are vailid| 1 if vaild| 0 if not
-int FileStream::checkCommandArgs(int, char **){
-	return 0;
+int FileStream::checkCommandArgs(int argc, char **argv){
+	//valid if one flag and 2 filenames
+	if(argc != 4)
+		return 0;
+	std::string s = argv[1];
+	if(!s.compare("-e") || !s.compare("-d"))
+		return 0;
+
+	//vaild flag save
+	flag = argv[1][2];
+	return 1;
 }
 
 //returns commandline flag
 char FileStream::getFlag(){
-	return 'a';
+	return flag;
 }
 
 //returns input file
@@ -44,7 +53,7 @@ void FileStream::usage(){
 }
 
 //outputs string to terminal
-void FileStream::print(char*){
+void FileStream::print(std::string){
 }
 
 //reads a chuck from the input file and stores in buffer

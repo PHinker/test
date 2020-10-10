@@ -5,6 +5,7 @@
 
 #include <fstream>	//ifstream, ofstream
 #include <iostream>	//cout
+#include <string>
 
 class FileStream{
 private:
@@ -31,7 +32,7 @@ public:
 	//outputs usage to terminal and exits 1
 	void usage();
 	//outputs string to terminal
-	void print(char*);
+	void print(std::string);
 	//reads a chuck from the input file and stores in buffer
 	int readChunk(char*);
 	//store chunk to output file
