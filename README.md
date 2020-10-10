@@ -31,7 +31,7 @@ huffman.h		-huffman functions
 ##main.cpp
 	main
 
-##fileStream.h
+##filestream.h
 	//checks if commandline args are vailid| 1 if vaild| 0 if not
 	int checkCommandArgs(argc, argv);
 
@@ -54,7 +54,7 @@ huffman.h		-huffman functions
 	void openOutFile(std::string outputFileName);
 
 	//outputs usage to terminal
-	void ussage();
+	void usage();
 
 	//outputs string to terminal
 	void print(char*);
@@ -78,8 +78,17 @@ huffman.h		-huffman functions
 	// returns pointer to arrary of size 256
 	int* frequency(std::ifstream&);
 
-	//checks file signiture, returns true if valid
-	bool validateSignature(FileStream&)
+	//checks file signiture. exit 2
+	void validateSignature(FileStream&);
+
+	//compresses frequency table, removes values with frequency of zero
+	//returns char array with format:
+	//	 size-of-table, char, count, char,count ...
+	char* compressTable(int*);
+
+	//decompress frequency table, takes in a compressed table
+	//returns a array of size 256
+	int* decompressTable(char*);
 
 
 

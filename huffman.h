@@ -1,10 +1,13 @@
 #ifndef HUFFMAN_H
 #define HUFFMAN_H
 
+#define SIGNATURE 0xf6483e44
+
 #include <map>			//map
 #include <unordered_set>//hash table
 #include <fstream>		//ifstream, ofstream
 #include "filestream.h"
+
 
 //encodes input file and outputs to compressed file
 void encode(FileStream&);
@@ -23,4 +26,15 @@ std::map<int, std::pair<unsigned char, int>>* buildHuffmanTree(int*);
 // returns pointer to arrary of size 256
 int* frequency(std::ifstream&);
 
+//checks file signiture. exit 2 not a huffman compressed file
+void validateSignature(FileStream&);
+
+//compresses frequency table, removes values with frequency of zero
+//returns char array with format:
+//	 size-of-table, char, count, char,count ...
+char* compressTable(int*);
+
+//decompress frequency table, takes in a compressed table
+//returns a array of size 256
+int* decompressTable(char*);
 #endif

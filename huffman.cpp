@@ -25,3 +25,22 @@ int* frequency(std::ifstream&){
 	int* a = new int[256];
 	return a;
 }
+
+//checks file signiture. exit 2
+void validateSignature(FileStream&){
+}
+
+//compresses frequency table, removes values with frequency of zero
+//returns char array with format:
+//	 size-of-table, char, count, char,count ...
+char* compressTable(int*){
+	char* a = new char[26];
+	return a;
+}
+
+//decompress frequency table, takes in a compressed table
+//returns a array of size 256
+int* decompressTable(char*){
+	int* a = new int[256];
+	return a;
+}
