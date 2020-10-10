@@ -30,6 +30,10 @@ public:
 	void usage();
 	//outputs string to terminal
 	void print(char*);
+	//reads a chuck from the input file and stores in buffer
+	int readChunk(char*);
+	//store chunk to output file
+	int storeChunk(char*);
 };
 
 #endif
