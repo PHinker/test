@@ -116,13 +116,12 @@ Write functions
 	main
 
 ##fileStream.h
-	int checkCommandArgs(argc, argv);
-	char getFlag();
-	ifstream* getInFile();
-	ofstream* getOutFile();
-	void openFiles(argc, argv);
 	void openInFile(std::string inputFileName);
 	void openOutFile(std::string outputFileName);
+	int FileStream::readChunk(char*)
+	int FileStream::storeChunk(char*)
+	int FileStream::validateSignature()
+	void FileStream::invalidFile()
 
 ##huffman.h
 	void encode(FileStream&);
@@ -130,3 +129,8 @@ Write functions
 	std::unordered_set<unsigned char, unsigned char>* buildHuffmanTable(FileStream&);
 	std::map<int, std::pair<unsigned char, int>>* buildHuffmanTree(int*);
 	int* frequency(std::ifstream&);
+	char* compressTable(int*)
+	int* decompressTable(char*)
+
+
+
