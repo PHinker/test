@@ -38,3 +38,11 @@ void FileStream::openInFile(std::string inputFileName){
 // Open the output file
 void FileStream::openOutFile(std::string outputFileName){
 }
+
+//outputs usage to terminal and exits 1
+void FileStream::usage(){
+}
+
+//outputs string to terminal
+void FileStream::print(char*){
+}

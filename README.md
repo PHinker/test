@@ -1,5 +1,17 @@
 # huffman_solo
-Huffman 
+Huffman encoding
+	build frequency table
+	build tree from frequency table
+	build table from tree
+	encode file
+Huffman decoding
+	extract frequnecy table from file
+	build tree from frequency table
+	decode file
+
+
+	file signature:f6 48 3e 44
+	store frequency table in encoded file
 
 #Usage
 	huffman -e
@@ -41,6 +53,12 @@ huffman.h		-huffman functions
 	// Open the output file
 	void openOutFile(std::string outputFileName);
 
+	//outputs usage to terminal
+	void ussage();
+
+	//outputs string to terminal
+	void print(char*);
+
 
 ##huffman.h
 	//encodes input file and outputs to compressed file
@@ -59,6 +77,9 @@ huffman.h		-huffman functions
 	//builds a frequency table of how many times a char appears in a file
 	// returns pointer to arrary of size 256
 	int* frequency(std::ifstream&);
+
+	//checks file signiture, returns true if valid
+	bool validateSignature(FileStream&)
 
 
 

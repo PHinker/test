@@ -1,7 +1,8 @@
 #ifndef	FILESTREAM_H
 #define FILESTREAM_H
 
-#include <fstream>		//ifstream, ofstream
+#include <fstream>	//ifstream, ofstream
+#include <iostream>	//cout
 
 class FileStream{
 private:
@@ -25,6 +26,10 @@ public:
 	void openInFile(std::string inputFileName);
 	// Open the output file
 	void openOutFile(std::string outputFileName);
+	//outputs usage to terminal and exits 1
+	void usage();
+	//outputs string to terminal
+	void print(char*);
 };
 
 #endif
