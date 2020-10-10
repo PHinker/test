@@ -62,13 +62,28 @@ huffman.h		-huffman functions
 
 
 
-http://www.cplusplus.com/reference/bitset/bitset/
-
-
-
 
 #bugs
 
 
 #todo
+Added usage statement
+Write functions
+##main.cpp
+	main
 
+##fileStream.h
+	int checkCommandArgs(argc, argv);
+	char getFlag();
+	ifstream* getInFile();
+	ofstream* getOutFile();
+	void openFiles(argc, argv);
+	void openInFile(std::string inputFileName);
+	void openOutFile(std::string outputFileName);
+
+##huffman.h
+	void encode(FileStream&);
+	void decode(FileStream&);
+	std::unordered_set<unsigned char, unsigned char>* buildHuffmanTable(FileStream&);
+	std::map<int, std::pair<unsigned char, int>>* buildHuffmanTree(int*);
+	int* frequency(std::ifstream&);
