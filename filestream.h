@@ -23,7 +23,7 @@ public:
 	std::ifstream* getInFile();
 	//returns output file
 	std::ofstream* getOutFile();
-	// Extract files from commandline and open assumes
+	// Extract files from commandline and open assumes correct
 	void openFiles(int, char **);
 	// Open the input file
 	void openInFile(std::string inputFileName);

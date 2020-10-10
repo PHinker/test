@@ -28,16 +28,18 @@ char FileStream::getFlag(){
 
 //returns input file
 std::ifstream* FileStream::getInFile(){
-	return nullptr;
+	return fin;
 }
 
 //returns output file
 std::ofstream* FileStream::getOutFile(){
-	return nullptr;
+	return fout;
 }
 
-// Extract files from commandline and open assumes
-void FileStream::openFiles(int, char **){
+// Extract files from commandline and open assumes correct
+void FileStream::openFiles(int argc, char **argv){
+	openInFile(argv[2]);
+	openOutFile(argv[3]);
 }
 
 // Open the input file

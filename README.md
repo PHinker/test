@@ -14,8 +14,13 @@ Huffman decoding
 	store frequency table in encoded file
 
 #Usage
-	huffman -e
-	huffman -d
+Usage: huffman -e SOURCE DEST
+  or:  huffman -d SOURCE DEST
+Huffman encode or decode SOURCE to DEST.
+
+Required arguments.
+  -e	Encode SOURCE to DEST
+  -d	Decode SOURCE to DEST
 
 
 #files
