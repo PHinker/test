@@ -12,8 +12,7 @@ int FileStream::checkCommandArgs(int argc, char **argv){
 	//valid if one flag and 2 filenames
 	if(argc != 4)
 		return 0;
-	std::string s = argv[1];
-	if(!s.compare("-e") || !s.compare("-d"))
+	if(argv[1][1] != 'e' && argv[1][1] != 'd')
 		return 0;
 
 	//vaild flag save
