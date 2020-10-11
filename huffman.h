@@ -1,6 +1,8 @@
 #ifndef HUFFMAN_H
 #define HUFFMAN_H
 
+#define SIZE_OF_BUFFER 1024
+
 #include <map>			//map
 #include <unordered_set>//hash table
 #include <fstream>		//ifstream, ofstream

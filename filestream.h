@@ -14,19 +14,16 @@ private:
 	char flag;
 	std::string infile;
 	std::string outfile;
+public:
 	std::ifstream fin;
 	std::ofstream fout;
-public:
+
 	FileStream();
 	~FileStream();
 	//checks if commandline args are vailid returns 1 if vaild, 0 if not
 	int checkCommandArgs(int, char **);
 	//returns commandline flag
 	char getFlag();
-	//returns input file
-	std::ifstream* getInFile();
-	//returns output file
-	std::ofstream* getOutFile();
 	// Extract files from commandline and open assumes correct
 	void openFiles(int, char **);
 	// Close both fin and fout

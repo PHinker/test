@@ -25,16 +25,6 @@ char FileStream::getFlag(){
 	return flag;
 }
 
-//returns input file
-std::ifstream* FileStream::getInFile(){
-	return &fin;
-}
-
-//returns output file
-std::ofstream* FileStream::getOutFile(){
-	return &fout;
-}
-
 // Extract files from commandline and open assumes correct
 void FileStream::openFiles(int argc, char **argv){
 	openInFile(argv[2]);
