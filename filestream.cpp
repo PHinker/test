@@ -80,11 +80,6 @@ void FileStream::openOutFile(std::string outputFileName){
 }
 
 
-//outputs string to terminal
-void FileStream::print(std::string message){
-	std::cout << message;
-}
-
 //reads a chuck from the input file and stores in buffer
 int FileStream::readChunk(char*){
 	return 0;

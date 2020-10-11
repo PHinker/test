@@ -2,6 +2,8 @@
 #define FILESTREAM_H
 
 #define SIGNATURE 0xf6483e44
+#define ERROR_USAGE 1
+#define ERROR_INVALID 2
 
 #include <fstream>	//ifstream, ofstream
 #include <iostream>	//cout
@@ -51,6 +53,7 @@ public:
 	void invalidFile();
 	//quits program with message
 	void quit(int);
+	void print(int);
 };
 
 #endif

@@ -27,7 +27,7 @@ Required arguments.
 main.cpp		-start of program
 filestream.h	-class that handles input and output to files
 	filestream.cpp
-	fileStream_exiting.cpp
+	fileStream_print.cpp
 huffman.h		-huffman functions
 	huffman.cpp
 

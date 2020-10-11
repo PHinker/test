@@ -1,15 +1,30 @@
 #include "filestream.h"
 
-//print message and exit with status
-void FileStream::quit(int status){
+
+//outputs string to terminal
+void FileStream::print(std::string message){
+	std::cout << message;
+}
+
+
+//prints out status message to terminal
+void FileStream::print(int status){
 	switch(status){
-	case 1:		//usage
+	case ERROR_USAGE:
 		usage();
 		break;
-	case 2:		//invalidFile
+	case ERROR_INVALID:
 		invalidFile();
 		break;
+	default:
+		std::cout << "\nStatus: "<< status << std::endl;
 	}
+}
+
+
+//print message and exit with status
+void FileStream::quit(int status){
+	
 
 	closeFiles();
 	exit(status);

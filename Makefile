@@ -2,7 +2,7 @@ SOURCE = main.cpp \
 		 main.cpp \
 		 huffman.cpp \
 		 filestream.cpp \
-		 filestream_exiting.cpp
+		 filestream_print.cpp
 
 OBJS = $(SOURCE:.cpp=.o)
 
