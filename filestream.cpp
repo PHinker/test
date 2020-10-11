@@ -49,17 +49,6 @@ void FileStream::closeFiles(){
 	fout.close();
 }
 
-
-//reads a chuck from the input file and stores in buffer
-int FileStream::readChunk(char*){
-	return 0;
-}
-
-//store chunk to output file
-int FileStream::storeChunk(char*){
-	return 0;
-}
-
 //checks file signiture
 int FileStream::validateSignature(){
 	return 0;

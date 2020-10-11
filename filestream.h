@@ -30,10 +30,6 @@ public:
 	void closeFiles();
 	//outputs string to terminal
 	void print(std::string);
-	//reads a chuck from the input file and stores in buffer
-	int readChunk(char*);
-	//store chunk to output file
-	int storeChunk(char*);
 	//checks file signiture. exit 2 not a huffman compressed file
 	int validateSignature();
 

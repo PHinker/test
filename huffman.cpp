@@ -2,11 +2,11 @@
 
 //encodes input file and outputs to compressed file
 void encode(FileStream &fs){
-	fs.print("calling encode\n");
+	//create histogram
 	int* histogram = frequency(fs.fin);
-
-	std::cout << "Symbol\tAscii Value\tCount\n";
-	std::cout << "------\t-----------\t-----\n";
+	
+	//print histogram
+	fs.print("Symbol\tAscii Value\tCount\n------\t-----------\t-----\n");
 	for (int symbol = 0 ; symbol < 256 ; symbol++)
 		if (histogram[symbol]){
 			if (symbol < 32)
@@ -15,11 +15,22 @@ void encode(FileStream &fs){
 				std::cout << (char)symbol << "\t" << symbol << "\t\t" << histogram[symbol] << std::endl;
 		}
 
+	//build tree from frequency table
+	//build table from tree
+	//encode file
+
+	//write table to file
+	fs.fout.write((char*)histogram,SIZE_OF_BUFFER);
+
+
 	delete histogram;
 }
 
 //decodes input file and outputs decompressed file
 void decode(FileStream&){
+	//extract frequnecy table from file
+	//build tree from frequency table
+	//decode file
 }
 
 //builds a huffman code table from input file
