@@ -27,6 +27,7 @@ Required arguments.
 main.cpp		-start of program
 filestream.h	-class that handles input and output to files
 	filestream.cpp
+	fileStream_exiting.cpp
 huffman.h		-huffman functions
 	huffman.cpp
 
@@ -113,13 +114,11 @@ huffman.h		-huffman functions
 
 
 #todo
-Added usage statement
 Write functions
 ##main.cpp
 	main
 
 ##fileStream.h
-	void openInFile(std::string inputFileName);
 	void openOutFile(std::string outputFileName);
 	int FileStream::readChunk(char*)
 	int FileStream::storeChunk(char*)

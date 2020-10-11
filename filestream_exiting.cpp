@@ -11,6 +11,7 @@ void FileStream::quit(int status){
 		break;
 	}
 
+	closeFiles();
 	exit(status);
 }
 

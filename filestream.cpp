@@ -49,6 +49,7 @@ void FileStream::closeFiles(){
 
 // Open the input file
 void FileStream::openInFile(std::string inputFileName){
+	infile = inputFileName;
 
 	fin.open(inputFileName, std::ios::in | std::ios::binary);
 
@@ -64,6 +65,18 @@ void FileStream::openInFile(std::string inputFileName){
 
 // Open the output file
 void FileStream::openOutFile(std::string outputFileName){
+	outfile = outputFileName;
+	//open output file for writing
+	fout.open(outputFileName, std::ios::out | std::ios::binary );
+
+	//check if opened
+	if(!fout.is_open()){
+		std::cout << "Error: unable to open " << outputFileName << std::endl;
+		exit(0);
+	}else{
+		std::cout << "Output file Ok.\n";
+		fout.close();
+	}
 }
 
 
