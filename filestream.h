@@ -25,13 +25,9 @@ public:
 	//returns commandline flag
 	std::string getFlag();
 	// Extract files from commandline and open assumes correct
-	void openFiles(int, char **);
+	int openFiles(int, char **);
 	// Close both fin and fout
 	void closeFiles();
-	// Open the input file
-	void openInFile(std::string inputFileName);
-	// Open the output file
-	void openOutFile(std::string outputFileName);
 	//outputs string to terminal
 	void print(std::string);
 	//reads a chuck from the input file and stores in buffer

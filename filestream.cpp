@@ -27,45 +27,26 @@ std::string FileStream::getFlag(){
 }
 
 // Extract files from commandline and open assumes correct
-void FileStream::openFiles(int argc, char **argv){
-	openInFile(argv[2]);
-	openOutFile(argv[3]);
+// returns 0 both files opened successfully
+// returns 1 input opened but output did not
+// returns 2 input did not open but output did
+// returns 3 input did not open and output did not open
+int FileStream::openFiles(int argc, char **argv){
+	infile = argv[2];
+	fin.open(infile, std::ios::in | std::ios::binary);
+	outfile = argv[3];
+	fout.open(outfile, std::ios::out | std::ios::binary );
+
+	if(fin.is_open())
+		return fout.is_open() ? 0 : 1;
+	else
+		return fout.is_open() ? 2 : 3;
 }
 
 // Close both fin and fout
 void FileStream::closeFiles(){
 	fin.close();
 	fout.close();
-}
-
-// Open the input file
-void FileStream::openInFile(std::string inputFileName){
-	infile = inputFileName;
-
-	fin.open(inputFileName, std::ios::in | std::ios::binary);
-
-	// Check if file opened.
-	if(!fin.is_open()){
-		std::cout << "Error: unable to open " << inputFileName << std::endl;
-		exit(0);
-	}else{
-		std::cout << "Input file Ok.\n";
-	}
-}
-
-// Open the output file
-void FileStream::openOutFile(std::string outputFileName){
-	outfile = outputFileName;
-	//open output file for writing
-	fout.open(outputFileName, std::ios::out | std::ios::binary );
-
-	//check if opened
-	if(!fout.is_open()){
-		std::cout << "Error: unable to open " << outputFileName << std::endl;
-		exit(0);
-	}else{
-		std::cout << "Output file Ok.\n";
-	}
 }
 
 
