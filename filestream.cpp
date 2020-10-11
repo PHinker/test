@@ -80,6 +80,9 @@ int FileStream::validateSignature(){
 }
 
 //prints message and exits 2
-void FileStream::invalidFile(){
+void FileStream::invalidFile(std::string file){
+	print("\n! ");
+	print(file);
+	print(": The file is either in unknown format or damaged\n");
 	exit(2);
 }

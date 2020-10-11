@@ -12,7 +12,7 @@ int main(int argc, char **argv){
 	
 	//check signature
 	if(!fs.validateSignature())
-		fs.invalidFile();
+		fs.invalidFile(argv[2]);
 
 	//call either encoder or decoder
 	if(fs.getFlag() == 'e')

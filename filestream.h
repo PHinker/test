@@ -40,7 +40,7 @@ public:
 	//checks file signiture. exit 2 not a huffman compressed file
 	int validateSignature();
 	//prints message and exits 2
-	void invalidFile();
+	void invalidFile(std::string);
 };
 
 #endif
