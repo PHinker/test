@@ -1,7 +1,8 @@
 SOURCE = main.cpp \
 		 main.cpp \
 		 huffman.cpp \
-		 filestream.cpp
+		 filestream.cpp \
+		 filestream_exiting.cpp
 
 OBJS = $(SOURCE:.cpp=.o)
 

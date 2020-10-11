@@ -13,7 +13,7 @@ int main(int argc, char **argv){
 	//check signature
 	if(!fs.validateSignature()){
 		fs.closeFiles();
-		fs.invalidFile(argv[2]);
+		fs.quit(2);
 	}
 
 	//call either encoder or decoder

@@ -33,8 +33,6 @@ public:
 	void openInFile(std::string inputFileName);
 	// Open the output file
 	void openOutFile(std::string outputFileName);
-	//outputs usage to terminal and exits 1
-	void usage();
 	//outputs string to terminal
 	void print(std::string);
 	//reads a chuck from the input file and stores in buffer
@@ -43,8 +41,14 @@ public:
 	int storeChunk(char*);
 	//checks file signiture. exit 2 not a huffman compressed file
 	int validateSignature();
+
+	/*
+		filestream_exiting.cpp
+	*/
+	//outputs usage to terminal and exits 1
+	void usage();
 	//prints message and exits 2
-	void invalidFile(std::string);
+	void invalidFile();
 	//quits program with message
 	void quit(int);
 };

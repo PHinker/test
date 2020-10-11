@@ -66,15 +66,6 @@ void FileStream::openInFile(std::string inputFileName){
 void FileStream::openOutFile(std::string outputFileName){
 }
 
-//outputs usage to terminal and exits 1
-void FileStream::usage(){
-	print("\nUsage: huffman -e SOURCE DEST");
-	print("\n  or:  huffman -d SOURCE DEST");
-	print("\nHuffman encode or decode SOURCE to DEST.\n");
-	print("\nRequired arguments.");
-	print("\n  -e\tEncode SOURCE to DEST");
-	print("\n  -d\tDecode SOURCE to DEST\n");
-}
 
 //outputs string to terminal
 void FileStream::print(std::string message){
@@ -96,14 +87,9 @@ int FileStream::validateSignature(){
 	return 0;
 }
 
-//prints message and exits 2
-void FileStream::invalidFile(std::string file){
-	print("\n! ");
-	print(file);
-	print(": The file is either in unknown format or damaged\n");
-	exit(2);
-}
 
 
-void FileStream::quit(int){
-}
+
+
+
+
