@@ -41,8 +41,26 @@ void FileStream::openFiles(int argc, char **argv){
 	openOutFile(argv[3]);
 }
 
+// Close both fin and fout
+void FileStream::closeFiles(){
+	fin.close();
+	fout.close();
+}
+
 // Open the input file
 void FileStream::openInFile(std::string inputFileName){
+
+	fin.open(inputFileName, std::ios::in | std::ios::binary);
+
+	// Check if file opened.
+	if ( !fin ){
+		std::cout << "Error: unable to open " << inputFileName << std::endl;
+		exit(0);
+	}
+	else{
+		std::cout << "Input file Ok.\n";
+		fin.close();
+	}
 }
 
 // Open the output file

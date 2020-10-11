@@ -52,6 +52,9 @@ huffman.h		-huffman functions
 	// Extract files from commandline and open assumes
 	void openFiles(argc, argv);
 
+	// Close both fin and fout
+	void closeFiles();
+
 	// Open the input file
 	void openInFile(std::string inputFileName);
 
@@ -121,7 +124,6 @@ Write functions
 	int FileStream::readChunk(char*)
 	int FileStream::storeChunk(char*)
 	int FileStream::validateSignature()
-	void FileStream::invalidFile()
 
 ##huffman.h
 	void encode(FileStream&);

@@ -11,13 +11,17 @@ int main(int argc, char **argv){
 	fs.openFiles(argc, argv);
 	
 	//check signature
-	if(!fs.validateSignature())
+	if(!fs.validateSignature()){
+		fs.closeFiles();
 		fs.invalidFile(argv[2]);
+	}
 
 	//call either encoder or decoder
 	if(fs.getFlag() == 'e')
 		encode(fs);//encode
 	else
 		decode(fs);//decode
+	
+	fs.closeFiles();
 	return 0;
 }

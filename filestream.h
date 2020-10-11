@@ -25,6 +25,8 @@ public:
 	std::ofstream* getOutFile();
 	// Extract files from commandline and open assumes correct
 	void openFiles(int, char **);
+	// Close both fin and fout
+	void closeFiles();
 	// Open the input file
 	void openInFile(std::string inputFileName);
 	// Open the output file
