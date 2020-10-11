@@ -4,6 +4,18 @@
 void encode(FileStream &fs){
 	fs.print("calling encode\n");
 	int* histogram = frequency(fs.fin);
+
+	std::cout << "Symbol\tAscii Value\tCount\n";
+	std::cout << "------\t-----------\t-----\n";
+	for (int symbol = 0 ; symbol < 256 ; symbol++)
+		if (histogram[symbol]){
+			if (symbol < 32)
+				std::cout << "NP\t" << symbol << "\t\t" << histogram[symbol] << std::endl;
+			else
+				std::cout << (char)symbol << "\t" << symbol << "\t\t" << histogram[symbol] << std::endl;
+		}
+
+	delete histogram;
 }
 
 //decodes input file and outputs decompressed file
@@ -28,22 +40,12 @@ int* frequency(std::ifstream &fin){
 	unsigned char buffer[SIZE_OF_BUFFER];
 	int i;
 
-	fin.read((char*) buffer, SIZE_OF_BUFFER);
-	while(fin.gcount()){
+	do{
+		fin.read((char*) buffer, SIZE_OF_BUFFER);
 		for(i = 0; i < fin.gcount(); i++)
 			table[int(buffer[i])]++;
-		fin.read((char*) buffer, SIZE_OF_BUFFER);
-	}
-	
-	std::cout << "Symbol\tAscii Value\tCount\n";
-   std::cout << "------\t-----------\t-----\n";
-   for (int symbol = 0 ; symbol < 256 ; symbol++)
-      if (table[symbol]){
-         if (symbol < 32)
-            std::cout << "Non-printable\t" << symbol << "\t\t" << table[symbol] << std::endl;
-         else
-            std::cout << (char)symbol << "\t" << symbol << "\t\t" << table[symbol] << std::endl;
-	}
+	}while(fin.gcount());
+
 	return table;
 }
 
