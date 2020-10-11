@@ -53,11 +53,10 @@ void FileStream::openInFile(std::string inputFileName){
 	fin.open(inputFileName, std::ios::in | std::ios::binary);
 
 	// Check if file opened.
-	if ( !fin ){
+	if(!fin.is_open()){
 		std::cout << "Error: unable to open " << inputFileName << std::endl;
 		exit(0);
-	}
-	else{
+	}else{
 		std::cout << "Input file Ok.\n";
 		fin.close();
 	}
