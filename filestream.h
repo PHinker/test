@@ -11,7 +11,7 @@
 
 class FileStream{
 private:
-	char flag;
+	std::string flag;
 	std::string infile;
 	std::string outfile;
 public:
@@ -23,7 +23,7 @@ public:
 	//checks if commandline args are vailid returns 1 if vaild, 0 if not
 	int checkCommandArgs(int, char **);
 	//returns commandline flag
-	char getFlag();
+	std::string getFlag();
 	// Extract files from commandline and open assumes correct
 	void openFiles(int, char **);
 	// Close both fin and fout

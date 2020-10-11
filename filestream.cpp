@@ -5,6 +5,7 @@ FileStream::FileStream(){
 }
 
 FileStream::~FileStream(){
+	closeFiles();
 }
 
 //checks if commandline args are vailid| 1 if vaild| 0 if not
@@ -16,12 +17,12 @@ int FileStream::checkCommandArgs(int argc, char **argv){
 		return 0;
 
 	//vaild flag save
-	flag = argv[1][2];
+	flag = argv[1];
 	return 1;
 }
 
 //returns commandline flag
-char FileStream::getFlag(){
+std::string FileStream::getFlag(){
 	return flag;
 }
 
@@ -49,7 +50,6 @@ void FileStream::openInFile(std::string inputFileName){
 		exit(0);
 	}else{
 		std::cout << "Input file Ok.\n";
-		fin.close();
 	}
 }
 
@@ -65,7 +65,6 @@ void FileStream::openOutFile(std::string outputFileName){
 		exit(0);
 	}else{
 		std::cout << "Output file Ok.\n";
-		fout.close();
 	}
 }
 

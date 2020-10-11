@@ -44,12 +44,6 @@ huffman.h		-huffman functions
 	//returns commandline flag
 	char getFlag();
 
-	//returns input file
-	ifstream* getInFile();
-
-	//returns output file
-	ofstream* getOutFile();
-
 	// Extract files from commandline and open assumes
 	void openFiles(argc, argv);
 
@@ -129,7 +123,6 @@ Write functions
 	void decode(FileStream&);
 	std::unordered_set<unsigned char, unsigned char>* buildHuffmanTable(FileStream&);
 	std::map<int, std::pair<unsigned char, int>>* buildHuffmanTree(int*);
-	int* frequency(std::ifstream&);
 	char* compressTable(int*)
 	int* decompressTable(char*)
 

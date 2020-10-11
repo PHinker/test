@@ -2,6 +2,7 @@
 
 //encodes input file and outputs to compressed file
 void encode(FileStream &fs){
+	fs.print("calling encode\n");
 	int* histogram = frequency(fs.fin);
 }
 

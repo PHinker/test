@@ -9,18 +9,17 @@ int main(int argc, char **argv){
 		fs.openFiles(argc, argv);
 		
 		//call either encoder or decoder
-		if(fs.getFlag() == 'e'){
-			encode(fs);//encode
+		if(fs.getFlag().compare("-e") == 0){
+			encode(fs);
 		}else{
 			//check signature
-			if(fs.validateSignature()){
-				decode(fs);//decode
-			}else{
-				fs.quit(2);
-			}
+			if(fs.validateSignature())
+				decode(fs);
+			else
+				fs.print(ERROR_INVALID);
 		}
 	}else{
-		fs.usage();
+		fs.print(ERROR_USAGE);
 	}
 
 	fs.closeFiles();
