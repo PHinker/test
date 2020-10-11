@@ -103,3 +103,7 @@ void FileStream::invalidFile(std::string file){
 	print(": The file is either in unknown format or damaged\n");
 	exit(2);
 }
+
+
+void FileStream::quit(int){
+}

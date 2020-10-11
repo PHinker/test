@@ -10,6 +10,8 @@
 class FileStream{
 private:
 	char flag;
+	std::string infile;
+	std::string outfile;
 	std::ifstream fin;
 	std::ofstream fout;
 public:
@@ -43,6 +45,8 @@ public:
 	int validateSignature();
 	//prints message and exits 2
 	void invalidFile(std::string);
+	//quits program with message
+	void quit(int);
 };
 
 #endif
