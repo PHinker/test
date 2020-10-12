@@ -6,6 +6,7 @@
 #include <map>			//map
 #include <unordered_set>//hash table
 #include <fstream>		//ifstream, ofstream
+#include <stack>		//stack
 #include "filestream.h"
 
 
@@ -24,14 +25,14 @@ std::map<int, std::pair<unsigned char, int>>* buildHuffmanTree(int*);
 
 //builds a frequency table of how many times a char appears in a file
 // returns pointer to arrary of size 256
-int* frequency(std::ifstream&);
+unsigned int* frequency(std::ifstream&);
 
 //compresses frequency table, removes values with frequency of zero
 //returns char array with format:
 //	 size-of-table, char, count, char,count ...
-char* compressTable(int*);
+int compressTable(unsigned int*,unsigned char*&);
 
 //decompress frequency table, takes in a compressed table
 //returns a array of size 256
-int* decompressTable(char*);
+unsigned int* decompressTable(unsigned char*);
 #endif
